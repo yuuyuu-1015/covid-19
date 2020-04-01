@@ -11,7 +11,7 @@ export default {
         labels: Data.patients_summary.date,
         datasets: [
           {
-            label: 'コロナ感染者数推移',
+            label: '感染者数推移',
             data: Data.patients_summary.data,
             backgroundColor: 
               'rgba(255, 99, 132, 0.2)',
@@ -28,13 +28,17 @@ export default {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Date'
+              labelString: '日付(月日)'
             }
           }],
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 100,
+              stepSize: 200,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: '感染者'
             }
           }]
         }
