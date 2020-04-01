@@ -7,8 +7,11 @@
     <whats-new :items="newsItems"></whats-new>
     <v-row>
       <v-col>
-        <time-bar-chart  :chart-data="patientsGraph"></time-bar-chart>
+        <time-bar-chart></time-bar-chart>
       </v-col>
+      <v-col></v-col>
+      <v-col></v-col>
+      <v-col></v-col>
     </v-row>
   </div>
 </template>
@@ -30,9 +33,7 @@ export default {
     return{
       date: Data.lastUpdate,
       title: "現在の感染者（二週間後の検査結果）",
-      newsItems: News.newsItems,
-    // 感染者数グラフ
-      patientsGraph : (Data.patients_summary.data)
+      newsItems: News.newsItems
     }
   }
 }
