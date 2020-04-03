@@ -1,0 +1,52 @@
+<script>
+import { Bar } from 'vue-chartjs';
+import Data from '@/data/data.json';
+
+export default {
+  extends: Bar,
+  name: 'chart',
+  data () {
+    return {
+      data: {
+        labels: Data.patients_summary_us.total_death,
+        datasets: [
+          {
+            label: '死亡者数',
+            data: Data.patients_summary_us.total_death,
+            backgroundColor: 
+              'rgba(0, 255, 255, 0.2)',
+              
+            borderColor: 
+              'rgba(0, 255, 255, 1)',
+              
+            borderWidth: 1
+          }
+        ]
+      },
+      options: {
+        scales: {
+          xAxes: [{
+            scaleLabel: {
+              display: true,
+              labelString: '日付(月日)'
+            }
+          }],
+          yAxes: [{
+            ticks: {
+              beginAtZero: true,
+              stepSize: 500,
+            },
+            scaleLabel: {
+              display: true,
+              labelString: '感染者'
+            }
+          }]
+        }
+      }
+    }
+  },
+  mounted () {
+    this.renderChart(this.data, this.options)
+  }
+}
+</script>
