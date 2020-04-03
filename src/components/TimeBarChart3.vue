@@ -22,8 +22,8 @@ export default {
         labels: Data.patients_summary.date,
         datasets: [
           {
-            label: '感染者数推移',
-            data: Data.patients_summary.data,
+            label: '感染者数増加率',
+            data: this.parcentage(Data.patients_summary.data),
             backgroundColor: 
               'rgba(255, 99, 132, 0.2)',
               
@@ -45,11 +45,11 @@ export default {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 200,
+              stepSize: 5,
             },
             scaleLabel: {
               display: true,
-              labelString: '感染者'
+              labelString: '増加率'
             }
           }]
         }
