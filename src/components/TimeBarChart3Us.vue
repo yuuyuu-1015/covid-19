@@ -19,7 +19,7 @@ export default {
   data () {
     return {
       data: {
-        labels: Data.patients_summary_us.date,
+        labels: Data.patients_summary.date,
         datasets: [
           {
             label: '感染者数増加率',

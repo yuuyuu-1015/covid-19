@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       data: {
-        labels: Data.patients_summary_us.total_death,
+        labels: Data.patients_summary.total_death,
         datasets: [
           {
             label: '死亡者数',

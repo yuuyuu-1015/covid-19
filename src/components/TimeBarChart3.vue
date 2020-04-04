@@ -45,11 +45,11 @@ export default {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 5,
+              stepSize: 10,
             },
             scaleLabel: {
               display: true,
-              labelString: '増加率'
+              labelString: '%'
             }
           }]
         }

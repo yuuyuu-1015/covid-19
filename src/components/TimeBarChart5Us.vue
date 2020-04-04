@@ -5,14 +5,24 @@ import Data from '@/data/data.json';
 export default {
   extends: Bar,
   name: 'chart',
+  methods: {
+    newInfectionF: function (infectionsPerDays) {
+        const newinfection = []; // 新規感染者
+        for(let i = 0, l=infectionsPerDays.length-1 ; i < l ; i++){
+          let n = infectionsPerDays[i + 1] - infectionsPerDays[i];
+        newinfection.push(n);
+        }
+        return newinfection;
+      }
+  },
   data () {
     return {
       data: {
-        labels: Data.patients_summary_us.new_death,
+        labels: Data.patients_summary.date,
         datasets: [
           {
             label: '新規死亡者数推移',
-            data: Data.patients_summary_us.new_death,
+            data: this.newInfectionF(Data.patients_summary_us.total_death),
             backgroundColor: 
               'rgba(0, 255, 255, 0.2)',
               

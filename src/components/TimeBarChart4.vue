@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       data: {
-        labels: Data.patients_summary.total_death,
+        labels: Data.patients_summary.date,
         datasets: [
           {
             label: '死亡者数',
@@ -34,7 +34,7 @@ export default {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 10,
+              stepSize: 20,
             },
             scaleLabel: {
               display: true,

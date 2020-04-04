@@ -6,19 +6,23 @@ export default {
   extends: Bar,
   name: 'chart',
   methods: {
-      dateNewCase(n){
-          n.splice(0, 9);
-          return n;
+    newInfectionF: function (infectionsPerDays) {
+        const newinfection = []; // 新規感染者
+        for(let i = 0, l=infectionsPerDays.length-1 ; i < l ; i++){
+          let n = infectionsPerDays[i + 1] - infectionsPerDays[i];
+        newinfection.push(n);
+        }
+        return newinfection;
       }
   },
   data () {
     return {
       data: {
-        labels: Data.patients_summary_us.date,
+        labels: Data.patients_summary.date,
         datasets: [
           {
             label: '新規感染者',
-            data: Data.patients_summary_us.data_new_case,
+            data: this.newInfectionF(Data.patients_summary_us.data),
             backgroundColor: 
               'rgba(0, 255, 255, 0.2)',
               
