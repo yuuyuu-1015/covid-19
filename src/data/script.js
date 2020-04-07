@@ -1,7 +1,7 @@
 const fs = require('fs')
 
-const INPUT_FILE = './input.csv' // 入力ファイル(CSV)のパス
-const OUTPUT_FILE = './output.json' // 出力ファイル(JSON)のパス
+const INPUT_FILE = './AllData.csv' // 入力ファイル(CSV)のパス
+const OUTPUT_FILE = './AllData.json' // 出力ファイル(JSON)のパス
 
 const main = async () => {
   const input = await fs.promises.readFile(INPUT_FILE, 'utf-8')
@@ -19,7 +19,7 @@ const main = async () => {
 const csvToJson = (csv) => {
   // 変換処理
   // 何かオブジェクトなり配列なりを返す
-  const result = []
+  const result = [] 
   for (let i = 0, l = csv.length; i < l; i++) {
     result.push({ date: csv[i][0], location: csv[i][1], new_cases: csv[i][2], new_deaths: csv[i][3], total_cases: csv[i][4], total_deaths: csv[i][5]})
   }
