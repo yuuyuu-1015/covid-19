@@ -1,9 +1,6 @@
 <template>
   <div class="MainPage">
-    <page-header
-      :title="title"
-      :date="date"
-    ></page-header>
+    <page-header :title="title"></page-header>
     <whats-new :items="newsItems"></whats-new>
     <h2>Japan</h2>
     <v-row>
@@ -73,7 +70,6 @@
 
 <script>
 import PageHeader from '@/components/PageHeader.vue';
-import Data from '@/data/AllData.json';
 import News from '@/data/news.json';
 import WhatsNew from '@/components/WhatsNew.vue';
 import TimeBarChart from '@/components/TimeBarChart.vue';
@@ -114,8 +110,7 @@ export default {
   },
   data() {
     return{
-      date: Data.lastUpdate,
-      title: "現在の感染者（二週間後の検査結果）",
+      title: "現在の感染者",
       newsItems: News.newsItems
     }
   }

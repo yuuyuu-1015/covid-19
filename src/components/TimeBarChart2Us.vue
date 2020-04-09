@@ -58,7 +58,7 @@ export default {
           yAxes: [{
             ticks: {
               beginAtZero: true,
-              stepSize: 10,
+              stepSize: 10000,
             },
             scaleLabel: {
               display: true,
