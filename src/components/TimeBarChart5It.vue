@@ -1,6 +1,6 @@
 <script>
 import { Bar } from 'vue-chartjs';
-import Data from '@/data/data.json';
+import Data from '@/data/AllData.json';
 
 export default {
   extends: Bar,
@@ -13,16 +13,30 @@ export default {
         newinfection.push(n);
         }
         return newinfection;
-      }
+    },
+    itDate: function(u){
+      const selectedLocation = ['Italy'];
+      const locationit = u.filter((v) => selectedLocation.includes(v.location));
+      const itDateArray = [];
+      locationit.map(x => itDateArray.push(x.date));
+      return itDateArray;
+    },
+    itTotalDeath: function(u){
+      const selectedLocation = ['Italy'];
+      const locationit = u.filter((v) => selectedLocation.includes(v.location));
+      const itTotalDeathArray = [];
+      locationit.map(x => itTotalDeathArray.push(x.total_deaths));
+      return itTotalDeathArray;
+    }
   },
   data () {
     return {
       data: {
-        labels: Data.patients_summary.date,
+        labels: this.itDate(Data),
         datasets: [
           {
             label: '新規死亡者数推移',
-            data: this.newInfectionF(Data.patients_summary_it.total_death),
+            data: this.newInfectionF(this.itTotalDeath(Data)),
             backgroundColor: 
               'rgba(255, 207, 70, 0.2)',
               

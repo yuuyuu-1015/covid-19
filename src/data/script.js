@@ -8,7 +8,7 @@ const main = async () => {
   
   const output = csvToJson(input.split('\n').map(line => line.split(',')))
   
-  await fs.promises.writeFile(OUTPUT_FILE, JSON.stringify(output))
+  await fs.promises.writeFile(OUTPUT_FILE, JSON.stringify(output, null, 2))
 }
 
 /**

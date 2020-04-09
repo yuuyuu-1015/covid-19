@@ -1,18 +1,34 @@
 <script>
 import { Bar } from 'vue-chartjs';
-import Data from '@/data/data.json';
+import Data from '@/data/AllData.json';
 
 export default {
   extends: Bar,
   name: 'chart',
+  methods: {
+    usDate: function(u){
+      const selectedLocation = ['United States'];
+      const locationus = u.filter((v) => selectedLocation.includes(v.location));
+      const usDateArray = [];
+      locationus.map(x => usDateArray.push(x.date));
+      return usDateArray;
+    },
+    usTotalDeath: function(u){
+      const selectedLocation = ['United States'];
+      const locationus = u.filter((v) => selectedLocation.includes(v.location));
+      const usTotalDeathArray = [];
+      locationus.map(x => usTotalDeathArray.push(x.total_deaths));
+      return usTotalDeathArray;
+    }
+  },
   data () {
     return {
       data: {
-        labels: Data.patients_summary.total_death,
+        labels: this.usDate(Data),
         datasets: [
           {
             label: '死亡者数',
-            data: Data.patients_summary_us.total_death,
+            data: this.usTotalDeath(Data),
             backgroundColor: 
               'rgba(0, 255, 255, 0.2)',
               

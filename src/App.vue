@@ -73,7 +73,7 @@
 
 <script>
 import PageHeader from '@/components/PageHeader.vue';
-import Data from '@/data/data.json';
+import Data from '@/data/AllData.json';
 import News from '@/data/news.json';
 import WhatsNew from '@/components/WhatsNew.vue';
 import TimeBarChart from '@/components/TimeBarChart.vue';

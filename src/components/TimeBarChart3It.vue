@@ -1,29 +1,43 @@
 <script>
 import { Bar } from 'vue-chartjs';
-import Data from '@/data/data.json';
+import Data from '@/data/AllData.json';
 
 export default {
   extends: Bar,
   name: 'chart',
   methods: {
-      parcentage: function parcentage(infectionsPerDays) {
-        const increasePerDays = []; // 日々の感染者数の増加率
-        for(let i = 0, l=infectionsPerDays.length-1 ; i < l ; i++){
-          let n = infectionsPerDays[i + 1] - infectionsPerDays[i];
-          let m = n / infectionsPerDays[i] * 100;
-        increasePerDays.push(m);
-        }
-        return increasePerDays;
+    parcentage: function parcentage(infectionsPerDays) {
+      const increasePerDays = []; // 日々の感染者数の増加率
+      for(let i = 0, l=infectionsPerDays.length-1 ; i < l ; i++){
+        let n = infectionsPerDays[i + 1] - infectionsPerDays[i];
+        let m = n / infectionsPerDays[i] * 100;
+      increasePerDays.push(m);
       }
+      return increasePerDays;
+    },
+    itDate: function(u){
+    const selectedLocation = ['Italy'];
+    const locationit = u.filter((v) => selectedLocation.includes(v.location));
+    const itDateArray = [];
+    locationit.map(x => itDateArray.push(x.date));
+    return itDateArray;
+    },
+    itTotalCase: function(u){
+      const selectedLocation = ['Italy'];
+      const locationit = u.filter((v) => selectedLocation.includes(v.location));
+      const itTotalCaseArray = [];
+      locationit.map(x => itTotalCaseArray.push(x.total_cases));
+      return itTotalCaseArray;
+    }
   },
   data () {
     return {
       data: {
-        labels: Data.patients_summary.date,
+        labels: this.itDate(Data),
         datasets: [
           {
             label: '感染者数増加率',
-            data: this.parcentage(Data.patients_summary_it.data),
+            data: this.parcentage(this.itTotalCase(Data)),
             backgroundColor: 
               'rgba(255, 207, 70, 0.2)',
               
