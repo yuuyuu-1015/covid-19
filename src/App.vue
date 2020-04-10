@@ -4,7 +4,16 @@
     <h2>Japan</h2>
     <v-row>
       <v-col>
-        <time-bar-chart></time-bar-chart>
+        <time-bar-chartAll
+          locationSelect="Italy"
+        ></time-bar-chartAll>
+        <select v-model="eventData.selectLocation">
+          <option 
+            v-for="selectLocation in selectLocations"
+            :key="selectLocation"
+            >{{selectLocation}}</option>
+        </select>
+        <p>{{eventData.selectLocation}}</p>
       </v-col>
       <v-col>
         <time-bar-chart2></time-bar-chart2>
@@ -69,7 +78,7 @@
 
 <script>
 import PageHeader from '@/components/PageHeader.vue';
-import TimeBarChart from '@/components/TimeBarChart.vue';
+import TimeBarChartAll from '@/components/TimeBarChartAll.vue';
 import TimeBarChart2 from '@/components/TimeBarChart2.vue';
 import TimeBarChart3 from '@/components/TimeBarChart3.vue';
 import TimeBarChart4 from '@/components/TimeBarChart4.vue';
@@ -91,7 +100,7 @@ import TimeBarChart6It from '@/components/TimeBarChart6It.vue';
 export default {
   components: {
     PageHeader,
-    TimeBarChart,
+    TimeBarChartAll,
     TimeBarChart2,
     TimeBarChart3,
     TimeBarChart4,
@@ -112,7 +121,11 @@ export default {
   },
   data() {
     return{
-      title: "コロナ分析グラフ"
+      title: "コロナ分析グラフ",
+      selectLocations: ["Japan", "Italy"],
+      eventData: {
+        selectLocation: "Japan"
+      }
     }
   }
 }
