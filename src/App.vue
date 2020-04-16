@@ -24,17 +24,18 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue';
 import TimeBarChartAll from '@/components/TimeBarChartAll.vue';
-
+// import Data from '@/data/AllData.json';
 
 export default {
   components: {
     PageHeader,
-    TimeBarChartAll
+    TimeBarChartAll, 
+    // Data
   },
   data() {
     return{
       title: "コロナ分析グラフ",
-      selectLocations: ["Japan", "Italy"],
+      selectLocations: ["Japan", "Italy", "Spain"],
       eventData: {
         selectLocation: "Japan"
       }

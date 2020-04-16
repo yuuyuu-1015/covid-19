@@ -1,19 +1,24 @@
 <script>
-import { Bar } from 'vue-chartjs';
-import Data from '@/data/AllData.json';
+import {Bar, mixins} from 'vue-chartjs';
+import Datas from '@/data/AllData.json';
 
 export default {
   extends: Bar,
+  mixins: [mixins.reactiveData],
   name: 'chart',
   props: {
       locationSelect: {
           type: String,
-          default: "Japan"
       },
       // yParamsSelect: {
       //     type: ,
       //     default: 
       // }
+  },
+  watch: {
+    locationSelect:function(){ 
+      this.renderChart(this.data, this.options)
+    }
   },
   methods: {
     newInfectionF: function (infectionsPerDays) {
@@ -33,16 +38,16 @@ export default {
       }
       return increasePerDays;
     },
-    LocationDate: function(d){
+    LocationDate: function(){
       const selectedLocation = [this.locationSelect];
-      const locationselect = d.filter((v) => selectedLocation.includes(v.location));
+      const locationselect = Datas.filter((v) => selectedLocation.includes(v.location));
       const dateArray = [];
       locationselect.map(x => dateArray.push(x.date));
       return dateArray;
     },
-    TotalCase: function(d){
+    TotalCase: function(){
       const selectedLocation = [this.locationSelect];
-      const locationselect = d.filter((v) => selectedLocation.includes(v.location));
+      const locationselect = Datas.filter((v) => selectedLocation.includes(v.location));
       const totalCaseArray = [];
       locationselect.map(x => totalCaseArray.push(x.total_cases));
       return totalCaseArray;
@@ -58,11 +63,11 @@ export default {
   data () {
     return {
       data: {
-        labels: this.LocationDate(Data),
+        labels: this.LocationDate(),
         datasets: [
           {
             label: '感染者数推移',
-            data: this.TotalCase(Data),
+            data: this.TotalCase(),
             backgroundColor: 
               'rgba(255, 99, 132, 0.2)',
               
