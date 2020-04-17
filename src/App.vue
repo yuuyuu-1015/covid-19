@@ -5,7 +5,7 @@
     
         <time-bar-chartAll
           class="chart"
-          :location-select=eventData.selectLocation
+          :location-select="eventData.selectLocation"
         ></time-bar-chartAll>
         <select v-model="eventData.selectLocation">
           <option
