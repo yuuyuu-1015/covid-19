@@ -24,18 +24,27 @@
 <script>
 import PageHeader from '@/components/PageHeader.vue';
 import TimeBarChartAll from '@/components/TimeBarChartAll.vue';
-// import Data from '@/data/AllData.json';
+import allData from '@/data/AllData.json';
 
 export default {
   components: {
     PageHeader,
-    TimeBarChartAll, 
-    // Data
+    TimeBarChartAll
+    
+  },
+  methods: {
+    getTotalLocations(){
+      return allData
+      .map(record => record.location)
+      .filter(function (x, i, self) {
+            return self.indexOf(x) === i;
+        });
+    }
   },
   data() {
     return{
       title: "コロナ分析グラフ",
-      selectLocations: ["Japan", "Italy", "Spain"],
+      selectLocations: this.getTotalLocations(),
       eventData: {
         selectLocation: "Japan"
       }
