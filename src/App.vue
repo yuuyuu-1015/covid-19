@@ -86,12 +86,12 @@ export default {
 }
 </script>
 
-<style>
-
-.chart{
-  display: block;
-  width: 800px;
-  margin: 0 auto;
+<style lang="scss" scoped>
+.MainPage{
+  & .chart{
+    display: block;
+    width: 800px;
+    margin: 0 auto;
+  }
 }
-
 </style>
