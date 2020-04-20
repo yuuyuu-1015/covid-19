@@ -64,7 +64,7 @@ export default {
     locationSelect() {
       // チャートに表示するデータを更新する
       this.chartData.labels = this.getLocationDate();
-      this.chartData.datasets[0].data = this.getTotalCase();
+      this.chartData.datasets[0].data = this.getTotalDeath();
 
       // チャートの描画を更新する
       this.$data._chart.update();
@@ -76,8 +76,8 @@ export default {
         labels: this.getLocationDate(),
         datasets: [
           {
-            label: "感染者数推移",
-            data: this.getTotalCase(),
+            label: "死亡者数",
+            data: this.getTotalDeath(),
             backgroundColor: "rgba(255, 99, 132, 0.2)",
             borderColor: "rgba(255, 99, 132, 1)",
             borderWidth: 1
@@ -102,7 +102,7 @@ export default {
               },
               scaleLabel: {
                 display: true,
-                labelString: "感染者"
+                labelString: "死亡者"
               }
             }
           ]
