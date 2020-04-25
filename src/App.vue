@@ -1,8 +1,12 @@
 <template>
   <div class="MainPage">
-    <page-header :title="title"></page-header>
-    <h2>{{eventData.selectLocation}}</h2>
-    
+    <page-header 
+      class="pageHeader"
+      :title="title"
+    ></page-header>
+    <label 
+      for="location"
+    >select location:</label>
         <select v-model="eventData.selectLocation">
           <option
             v-for="location in selectLocations"
@@ -12,35 +16,49 @@
             {{location}}
           </option>
         </select>
+      <v-row>
+      <v-col>
         <time-bar-chart-total-case
           class="chart"
           :location-select="eventData.selectLocation"
         ></time-bar-chart-total-case>
+      </v-col>
+      <v-col>
         <time-bar-chart-new-infection
           class="chart"
           :location-select="eventData.selectLocation"
         >
         </time-bar-chart-new-infection>
+      </v-col>
+      <v-col>
         <time-bar-chart-infection-increase-rate
           class="chart"
           :location-select="eventData.selectLocation"
         >
         </time-bar-chart-infection-increase-rate>
+      </v-col>
+      <v-col>
         <time-bar-chart-total-death
           class="chart"
           :location-select="eventData.selectLocation"
         >
         </time-bar-chart-total-death>
+      </v-col>
+      <v-col>
         <time-bar-chart-new-death
           class="chart"
           :location-select="eventData.selectLocation"
         >
         </time-bar-chart-new-death>
+      </v-col>
+      <v-col>
         <time-bar-chart-death-increase-rate
           class="chart"
           :location-select="eventData.selectLocation"
         >
         </time-bar-chart-death-increase-rate>
+      </v-col>
+      </v-row>
       
   </div>
 </template>
@@ -88,10 +106,23 @@ export default {
 
 <style lang="scss" scoped>
 .MainPage{
-  & .chart{
-    display: block;
-    width: 800px;
-    margin: 0 auto;
+  text-align: center;
+
+  & .pageHeader{
+    font-size: 2em;
+    width: 400px;
+    margin: 100px auto;
+  }
+  & > label{
+    font-size: 2em;
+  }
+  & > select{
+    font-size: 2em;
+    border: solid 2px black;
+    margin: 0 0 0 100px;
+  }
+  & .row{
+    margin: 100px 0;
   }
 }
 </style>
