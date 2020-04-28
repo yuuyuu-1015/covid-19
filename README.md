@@ -56,9 +56,7 @@ python demo.py
  
  
 # Author
- 
-作成情報を列挙する
- 
+  
 * Yuta Fukuchi / 福地　祐太
 * fufufu10155@gmail.com
 
