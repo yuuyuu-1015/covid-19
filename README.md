@@ -5,7 +5,7 @@
  
 # DEMO
  
-"hoge"の魅力が直感的に伝えわるデモ動画や図解を載せる
+![コロナサイト画像]<img width="1440" alt="img" src="https://user-images.githubusercontent.com/60467960/80489954-9458b880-899b-11ea-9b5d-e7e20d42f082.png">
  
 # Features
  
