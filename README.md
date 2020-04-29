@@ -5,7 +5,7 @@
  
 # DEMO
  
-![コロナサイト画像]<img width="1440" alt="img" src="https://user-images.githubusercontent.com/60467960/80489954-9458b880-899b-11ea-9b5d-e7e20d42f082.png">
+![]<img width="1440" alt="img" src="https://user-images.githubusercontent.com/60467960/80489954-9458b880-899b-11ea-9b5d-e7e20d42f082.png">
  
 # Features
  
