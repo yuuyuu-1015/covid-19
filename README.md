@@ -20,16 +20,16 @@ https://nodejs.org/ja/
  
 # Usage
   
-# プロジェクトのインストール
+- プロジェクトのインストール
 $ git clone https://github.com/yuuyuu-1015/covid-19.git
 $ cd covid-19
 $ npm i
 
-# データの更新
+- データの更新
 $ curl https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/full_data.csv > src/data/AllData.csv
 $ node ./src/data/script.js
 
-# 開発サーバの起動
+- 開発サーバの起動
 $ npm run serve
  
  
