@@ -21,7 +21,7 @@ https://nodejs.org/ja/
 # Usage
   
 - プロジェクトのインストール<br>
-$ git clone https://github.com/yuuyuu-1015/covid-19.git
+$ git clone https://github.com/yuuyuu-1015/covid-19.git <br>
 $ cd covid-19
 $ npm i
 
