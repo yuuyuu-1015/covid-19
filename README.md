@@ -27,7 +27,7 @@ $ npm i
 
 - データの更新<br>
 $ curl https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/full_data.csv > src/data/AllData.csv
-$ node ./src/data/script.js
+$ npm run data:update 
 
 - 開発サーバの起動<br>
 $ npm run serve
