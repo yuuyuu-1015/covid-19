@@ -1,4 +1,4 @@
-# NAME
+# コロナ分析サイト
  
 "コロナ分析サイト"は、コロナ感染者数・死者数をグラフで分析するサイトである。
  
@@ -6,54 +6,36 @@
 # DEMO
  
 <img width="1440" alt="img" src="https://user-images.githubusercontent.com/60467960/80489954-9458b880-899b-11ea-9b5d-e7e20d42f082.png">
- 
-# Features
- 
-"コロナ分析サイト"は、世界と世界各国のデータを各機能ごと閲覧できるようになっている。<br>
-各機能は以下の通りである。<br>
-・感染者数総数<br>
-・新規感染者数<br>
-・感染者数増加率<br>
-・死亡者数総数<br>
-・新規死亡者数<br>
-・死亡者数増加率<br>
- 
+  
  
 # Requirement
  
-* Vue 3.11.0
-* Vue-chartjs 
+* Node.js
+https://nodejs.org/ja/
  
  
 # Installation
- 
-・Vueのインストール方法 
- 
-```bash
-npm install -g @vue/cli
-```
 
-・Vue-chartjsのインストール方法
-
-```bash
-npm install vue-chartjs chart.js --save
-```
-
+プロジェクトルートで、npm installしてください。
  
 # Usage
   
-```bash
-https://github.com/yuuyuu-1015/covid-19.git
-npm run serve
-cd src/data
-curl https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/full_data.csv > AllData.csv
-node ./script.js
-```
+- プロジェクトのインストール<br>
+$ git clone https://github.com/yuuyuu-1015/covid-19.git <br>
+$ cd covid-19
+$ npm i
+
+- データの更新<br>
+$ curl https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/full_data.csv > src/data/AllData.csv
+$ npm run data:update 
+
+- 開発サーバの起動<br>
+$ npm run serve
  
  
 # Note
  
-開発者の環境は、Mac, Chromeである。Windows, 他のブラウザではテストしていない。
+Chromeでのみ動作確認済み
  
  
 # Author
