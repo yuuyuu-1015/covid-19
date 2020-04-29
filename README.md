@@ -41,14 +41,15 @@ npm install vue-chartjs chart.js --save
 
  
 # Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
+  
 ```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
+https://github.com/yuuyuu-1015/covid-19.git
+npm run serve
+cd src/data
+curl https://raw.githubusercontent.com/owid/covid-19-data/master/public/data/ecdc/full_data.csv > AllData.csv
+node ./script.js
 ```
+ 
  
 # Note
  
