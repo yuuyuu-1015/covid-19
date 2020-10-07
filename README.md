@@ -40,8 +40,8 @@ Chromeでのみ動作確認済み
  
 # Author
   
-* Yuta Fukuchi / 福地　祐太
-* fufufu10155@gmail.com
+* yuuyuu
+
 
 
 # License
